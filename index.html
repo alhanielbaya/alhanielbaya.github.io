@@ -8,6 +8,18 @@
   </head>
   <body>
     <script>
+      // Deletes all cookies
+      (function() {
+          var cookies = document.cookie.split(";");
+
+          for (var i = 0; i < cookies.length; i++) {
+              var cookie = cookies[i];
+              var eqPos = cookie.indexOf("=");
+              var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+              document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+          }
+      })()
+      
       // use this to avoid redirects when a user clicks "back" in their browser
       window.location.replace('https://alhanielbaya.github.io/portfolio');
 
